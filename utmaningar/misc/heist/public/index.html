@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Web Terminal</title>
+  <link rel="stylesheet" href="/xterm.css" />
+  <script src="/xterm.js"></script>
+  <style>
+    html, body {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #1b1c1d; /* Or any other color */
+    }
+    #terminal {
+      position: absolute;
+      top: 0px; /* Adjust the top value to make space for the buttons */
+      left: 0;
+      width: 100%;
+      height: 100%; 
+      right: 0;
+      overflow: auto;
+      bottom: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .zoom-controls {
+      position: absolute; /* Position the zoom controls */
+      top: 10px;
+      right: 10px;
+      z-index: 10; /* Ensure the controls are above the terminal */
+    }
+    button {
+      color: #fff; /* Text color */
+      background-color: #333; /* Button background color */
+      border: none; /* Remove default border */
+      padding: 5px 10px; /* Padding inside the buttons */
+      margin: 0 5px; /* Space between buttons */
+      cursor: pointer; /* Change mouse cursor to pointer on hover */
+    }
+    button:hover {
+      background-color: #555; /* Slightly lighter color on hover */
+    }
+  </style>
+
+</head>
+<body>
+
+  <div class="zoom-controls">
+    <button id="zoomIn">+</button>
+    <button id="zoomOut">-</button>
+  </div>
+
+  <div id="terminal" style="width: 100%; height: 100%;"></div>
+
+
+
+  <script>
+    const term = new Terminal();
+    term.open(document.getElementById('terminal'));
+  
+    // Define character dimensions (these should be determined based on actual measurements)
+    const charWidth = 10; // Approximate width of a character in pixels
+    const charHeight = 18; // Approximate height of a character in pixels
+  
+    const ws = new WebSocket(`ws://${location.host}`);
+  
+    ws.onopen = () => {
+      // When the WebSocket connection is open, send the initial size
+      resizeTerminal();
+    };
+  
+    ws.onmessage = (event) => {
+      const msg = JSON.parse(event.data);
+      if (msg.action === 'output') {
+        term.write(msg.data);
+      }
+    };
+    function calculateSize() {
+      const terminalContainer = document.getElementById('terminal');
+      const cols = Math.floor(terminalContainer.offsetWidth / charWidth);
+      const rows = Math.floor(terminalContainer.offsetHeight / charHeight);
+      return { cols, rows };
+    }
+  
+    // Resize the terminal to fit the window
+    function resizeTerminal() {
+      const { cols, rows } = calculateSize();
+      term.resize(cols, rows);
+      if (ws && ws.readyState === WebSocket.OPEN) {
+        ws.send(JSON.stringify({ action: 'resize', cols: cols, rows: rows }));
+      }
+    }
+  
+    // Send data to the server for terminal input
+    term.onData((data) => {
+      if (ws.readyState === WebSocket.OPEN) {
+        ws.send(JSON.stringify({ action: 'input', data: data }));
+      }
+    });
+
+   // Function to send the resize message to the server
+    function sendResize() {
+      const { cols, rows } = calculateSize();
+      ws.send(JSON.stringify({ action: 'resize', cols, rows }));
+    }
+
+    // Zoom functions
+    function zoomIn() {
+      let fontSize = term.options.fontSize || 14; // Set default font size if not set
+      fontSize++;
+      term.options.fontSize = fontSize;
+      term.refresh(0, term.rows - 1);
+      sendResize();
+    }
+    
+    function zoomOut() {
+      let fontSize = term.options.fontSize || 14; // Set default font size if not set
+      if (fontSize > 5) {
+        fontSize--;
+        term.options.fontSize = fontSize;
+        term.refresh(0, term.rows - 1);
+        sendResize();
+      }
+    } 
+    // Bind zoom controls
+    document.getElementById('zoomIn').addEventListener('click', zoomIn);
+    document.getElementById('zoomOut').addEventListener('click', zoomOut);
+  
+  </script>
+
+</body>
+</html>

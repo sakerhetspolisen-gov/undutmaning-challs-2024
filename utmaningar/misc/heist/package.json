@@ -1,0 +1,18 @@
+{
+  "name": "web-terminal",
+  "version": "1.0.0",
+  "description": "A web terminal interface for a tmux session",
+  "main": "web-terminal-server.js",
+  "scripts": {
+    "start": "node web-terminal-server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "ws": "^7.4.5",
+    "node-pty": "^0.10.0",
+    "xterm": "^4.9.0"
+  },
+  "author": "",
+  "license": "ISC"
+}
+

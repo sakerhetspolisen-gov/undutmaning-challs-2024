@@ -1,0 +1,12 @@
+A Device with no user input visible,
+
+10 sek timer
+
+tar -xf secret.tar unlocks to shell
+
+cat secret
+
+charcode:
+
+
+THE KEY is undut{under_pressure_without_visual_confirmation}
