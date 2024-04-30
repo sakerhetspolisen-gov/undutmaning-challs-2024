@@ -1,0 +1,22 @@
+## Beskrivning
+```
+this chall is a simple file encoder thats using fibbonaci encoing and xor the input with the last output form the encoder.
+the point is to reverse the echo binary, understand the encoder and program a decoder for the flag file (the flag file is a binary that prints the flag.).
+
+folder: chall
+    should contain everything needed for using the chall in a CTF
+folder: info
+    fibb.c
+        is the soruce for the encoder (echo).
+    fibb.py
+        is a decoder for the stuff that echo puts out.
+    flag.c 
+        the source for flag.
+```
+
+## Lösning
+`python3 src/fibb.py xordec flag`
+
+## Flagga
+
+Flaggan finns i `src/flag.c`

@@ -1,0 +1,13 @@
+## Hints
+Tänk om mätdatan bara visade effekt istället för energi.
+
+## Lösning
+1. Mätdatan visar ackumulerad energi över tid. Derivera för att få effektförbrukningen över tid.
+2. Visualisera mätdatan i en graf med antingen ett skript eller tex. excel. Notera att den föreställer en digital signal med visst brus.
+3. Avkoda den digitala signaler bit för bit. Hög effekt ger en etta, låg effekt ger en nolla. Anta att längden för en bit är densamma som minsta pulsbredd i signalen. Även här finns svagt brus i bitlängderna.
+4. Bitarna regresenterar flaggan, kodad som ASCII-tecken.
+
+## Flag
+
+`undut{S1mple_P0w3r_Analys1s_ar_skoj}`
+

@@ -1,0 +1,7 @@
+# Nyckelskåp
+En WebAssembly reverse engineering CTF utmaning för Undutmaningen 2024.
+
+## Flag
+```
+undut{d0n't_f0rg3t_t0_l0ck}
+```

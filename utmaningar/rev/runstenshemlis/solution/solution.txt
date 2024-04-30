@@ -1,0 +1,5 @@
+Utmaningen består av en binär (runstenshemlis.exe) och ett krypterat meddelande (secret.txt). Målet är att avkryptera det hemliga meddelandet för att finna flaggan som finns inbäddad i klartexten. Binären har obfuskerats litegrann för att höja ribban för reversing om man väljer att gå den vägen.
+
+Klurigheten består i att XOR-nyckeln för kryteringen ökar med 1 för varje byte och börjar på en slumpmässig offset. Genom att undersöka hur olika in-data ändras mha programmet kan man, utan att reversera programmets källkod, lista ut hur det fungerar.
+
+En lösning finns i solution.py
