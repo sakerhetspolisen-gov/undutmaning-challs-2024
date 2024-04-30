@@ -1,0 +1,5 @@
+# Beskrivning
+C# binär som innehåller klient sidan av sänka skepp. Klienten pratar med ett FastAPI som genererar spelarna positioner och skickar till klienten. Motståndaren fuskar och vet var dina pjäser befinner sig så man måste fuska tbx.
+
+# Flagga
+undut{ThisIsTheFlag}
