@@ -1,0 +1,5 @@
+Beskrivningen hintar om att tjänsten är sårbar för bleichenbacher's e=3 
+attack. Utnyttja sårbarheten för att skapa en signatur som servern 
+accepterar utan att du känner till privata nyckeln.
+
+Script för lösning finns i `solution.py`.

@@ -1,0 +1,10 @@
+Deltagaren presenteras med ett kryptogram på en websida, tillsammans med lite text som beskriver att det finns en "krypteringsserver" på en specifik TCP-port och att meddelandet dekrypteras till något som relaterar till bluetooth.
+
+Deltagaren måste lista ut hur kryptomeddelandet kan dekrypteras med hjälp av servern som hemsidan refererar till. Servern krypterar all mottagen data med ett duplex-sponge-baserat AEAD-strömchiffer och en statisk nyckel.
+
+Detta resulterar i att deltagaren kan dekryptera meddelandet genom att skicka rätt indata till server. Rätt indata i detta fallet är baserat på kryptogrammet på hemsidan, klartext samt nollpaddade strängar.
+
+När meddelandet är dekrypterat så erhåller deltagaren en pcap-fil innehållande bluetoothkommunikation. Kommunikationen består av en echoförfrågan och ett svar. Flaggan till utmaningen erhålles genom att slå ihop den payload som finns i echoförfrågan och svaret med hjälp av XOR.
+
+
+flagga: undut{MUSTL1k3sYoU}

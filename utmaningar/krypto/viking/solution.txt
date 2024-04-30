@@ -1,0 +1,5 @@
+Viking går ut på att lista ut rätt fras att svara med. Den går att lösa 
+manuellt eller med lättare scripting. Utmaningen är XOR-baserad
+och att veta vilka trix man kan ta till för att avkoda XOR underlättar mycket.
+
+Går att lösa med brute force och/eller google.
