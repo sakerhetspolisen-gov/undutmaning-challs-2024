@@ -1,0 +1,24 @@
+## Hints
+
+1. View in CyberChef with:
+    - View Bit Plane on bit `0`.
+    - Render image.
+
+## Solution
+
+1. Filter *out* pixel values where `LSB != 0`.
+2. Reverse each byte (8-bit grayscale encoded pixel).
+3. Print bytes as ASCII.
+4. (Optional) Read until first `THISISJUSTPADDINGPLEASEIGNORE`.
+
+## Bakgrund
+
+Kaninen på bilden gömd i utmaningen är **Stanford Bunny**. \
+![bunny](/stanford%20bunny%20white.png)
+
+Krukan är en vanlig stock-photage. \
+
+## Flagga
+
+undut{Th3_La5t_b1t_W4s_7ricky_t0_f1Nd}
+![pot](/pot.jpg)
