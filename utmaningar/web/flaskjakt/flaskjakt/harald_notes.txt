@@ -1,0 +1,157 @@
+Bluetooth 1.2 var specificerat för en överföringshastighet på minst 721 kbit/s.
+Bluetooth 2.0 var specificerat för att klara hastigheter upp till 2 Mbit/s
+Bluetooth 2.1 kunde klara ända upp till 3 Mbit/s tack vare EDR (Enhanced Data Rate)
+Bluetooth 3.0 klarade också 3 Mbit/s och tack vare ett WiFi-protokoll ända upp till 24 Mbit/s
+Bluetooth 4.2 var designat för låg energiförbrukning och klarade 1 Mbit/s
+Bluetooth 5 använde också låg energi men förbättrade överföringshastigheten till 2 Mbit/s
+Bluetooth använder det licensfria frekvensområdet på 2,4 GHz.
+Upp till 7 samtidiga anslutningar kan göras (men upp till 255 enheter kan tillhöra samma Piconet i parkerat läge).
+Låg bandbredd – runt 2 Mbit/s max.
+Bluetooth-tekniken är billig.
+Låg strömförbrukning – 0,3 mA i viloläge och 30 mA maximalt under dataöverföring.
+Begränsat interferensproblem – snabb frekvensöverhoppning mellan 1 MHz-band (1 600 gånger/sekund).
+Säker dataöverföring med kryptering, om sådan efterfrågas.
+Även om Bluetooth använder samma frekvensband som Wi-Fi (802.11b) kan båda vara i bruk samtidigt eftersom Bluetooth använder frekvenshopp.
+Profiler
+
+Alla Bluetooth-enheter ingår i olika profiler som beskriver vad enheten stödjer för funktioner. Man måste tänka på att alla enheter man tänkt använda tillsammans stöder de profiler man tänkt använda. Alla enheter måste stödja profilen Generic Access Profile och Service Discovery Application Profile.
+Här följer de profiler som är specificerade i Bluetooth SIG.
+
+Advanced Audio Distribution Profile (A2DP)
+
+    Innehåller de funktioner som behövs för att överföra stereoljud som till exempel musik från en MP3-spelare till ett par hörlurar. De kodekar som används är antingen MPEG-1,2 Audio, MPEG-2,4 AAC eller ATRAC. Profilen GAVDP behövs för att den här profilen ska fungera. Exempel på headset som använder profilen är Motorola HT820.
+
+Audio/Video Remote Control Profile (AVRCP)
+
+    Profilen är utformad för att ge ett standardgränssnitt så att en fjärrkontroll (eller någon annan enhet som stödjer profilen) kan styra TV, stereo eller annan A/V-utrustning som användaren har tillgång till. AVRCP kan kombineras med A2DP eller VDP. Profilen stödjer tillverkarspecifika funktioner. GMCP är tänkt att kunna använda dessa funktioner.
+
+Basic Imaging Profile (BIP)
+
+    Den här profilen är utformad för att skicka bilder mellan enheter och den har möjlighet att ändra storlek och konvertera bilder så att de ska passa den mottagande enheten. Profilen delas in i dessa underkategorier:
+    Image Push
+
+        Tillåter att en enhet skickar bilder till en annan
+
+    Image Pull
+
+        Tillåter att en enhet hämtar bilder från en annan.
+
+    Advanced Image Printing
+
+        Skriver ut bilder med avancerade valmöjligheter med formatet DPOF utvecklat av Canon, Kodak, Fuji och Matsushita
+
+    Automatic Archive
+
+        Tillåter automatisk backup av bilder från en annan enhet. Exempelvis så kan en laptop ta en kopia av nya bilder från en digitalkamera så fort den är inom räckvidd.
+
+    Remote Camera
+
+        En användare kan fjärrstyra en kamera. Som exempel kan användaren placera en kamera på ett stativ för att ta en gruppbild, kontrollera i sin telefon att alla är med i bild och då ta en bild, där användaren är med själv.
+
+    Remote Display
+
+        Tillåter en enhet att skicka bilder till en annan enhet som visar dessa. Ett exempel är att användaren kan visa en presentation genom att skicka bilderna till en projektor.
+
+Basic Printing Profile (BPP)
+
+    Ger möjlighet åt enheter att skicka text, epost, vCard, och annat till skrivare med egen skrivarkö. Profilen skiljer sig från HCRP eftersom den inte behöver någon skrivarspecifik drivrutin. Det gör den här profilen lämplig för enklare enheter som till exempel mobiltelefoner och digitalkameror som inte är så enkla att uppdatera med drivrutiner för en specifik skrivare.
+
+Common ISDN Access Profile (CIP)
+
+    Ger obegränsad åtkomst till den service, data och de signaler som ISDN ger.
+
+Cordless Telephony Profile (CTP)
+
+    Den här profilen är till för att trådlösa telefoner ska kunna fungera via Bluetooth. Man hoppas på att mobiltelefoner ska kunna använda en Bluetooth-CTP-gateway som är ansluten till fasta telefonnätet i hemmet, och sedan använda mobilnätet när man är utanför gatewayens täckningsområde.
+
+Dial-up Networking Profile (DUN)
+
+    Profilen ger en standard för att nå internet och annan uppringd service över Bluetooth. Det vanligaste är att nå internet från en laptop genom att ringa upp modempoolen på en mobiltelefon. Det är baserat på profilen SPP och tillhandahåller en enkel konvertering mellan tillgängliga produkter, genom de många funktioner som den har gemensamt med det kabelburna seriella gränssnittet för samma uppgift. Det inkluderar AT-kommandona specificerade i ETSI 07.07 och PPP.
+
+Fax Profile (FAX)
+
+    Denna profil är menad att ge ett väl definierat gränssnitt mellan en mobiltelefon eller en fast telefon och en dator med fax-programvara installerad. Det måste finnas stöd för ITU T.31 och/eller ITU T.32 AT-kommandon definierade av ITU-T. Varken data eller röstsamtal finns med i den här profilen.
+
+File Transfer Profile (FTP)
+
+    Inte att förväxla med File Transfer Protocol!
+    Ger tillgång till filsystemet på en annan enhet. Det inkluderar stöd för att lista mappar, gå till olika mappar, hämta filer, placera filer och radera filer på enheten. Profilen använder protokollet OBEX för överföringar och är baserat på Bluetoothprofilen GOEP.
+
+General Audio/Video Distribution Profile (GAVDP)
+
+    Innehåller de grundläggande funktionerna för profilerna A2DP och VDP.
+
+Generic Access Profile (GAP)
+
+    Innehåller de grundläggande funktionerna för alla andra profilerna.
+
+Generic Media Control Profile (GMCP)
+
+    Grundläggande, öppen, profil för att överföra mediainnehållsrelaterad information.
+
+Generic Object Exchange Profile (GOEP)
+
+    Innehåller de grundläggande funktionerna för alla andra dataöverföringsprofilerna och är baserad på OBEX.
+
+Hands Free Profile (HFP)
+
+    Den är allmänt använd för kommunikation mellan mobiltelefon och en bilmonterad handsfree. Den använder SCO för att bära en mono PCM-kanal.
+
+Hard Copy Cable Replacement Profile (HCRP)
+
+    Ger ett enkelt trådlöst alternativ till kabelanslutningen mellan en enhet och en skrivare. Tyvärr ger profilen ingen standard för själva kommunikationen till skrivaren, så skrivarspecifika drivrutiner är ett måste. Det gör profilen ganska oanvändbar för enkla enheter som mobiltelefoner, handdatorer och digitalkameror, eftersom det kan vara svårt att uppdatera drivrutiner, men på laptops och vanliga datorer är den fullt användbar.
+
+Headset Profile (HSP)
+
+    Detta är nog den allra vanligaste profilen, den används för kommunikation mellan Bluetooth-headset och till exempel en mobiltelefon. Den använder SCO för att bära ljudet och en delmängd av AT-kommandon från GSM 07.07 för några få funktioner såsom att ringa, svara, lägga på och ändra volymen.
+
+Human Interface Device Profile (HID)
+
+    Ger stöd för enheter som till exempel mus, joystick, tangentbord och så vidare. Den är utformad för att ge en länk med lägsta möjliga fördröjning och låg strömförbrukning. Exempel på populära produkter som använder den här profilen är Logitech diNovo Media Desktop 2.0, Microsoft Optical Desktop Elite, även PlayStation 3 kommer att använda Bluetooth HID till sina kontroller.
+
+Intercom Profile (ICP)
+
+    Ofta förknippad som walkie-talkie-profilen. Den är TCS-baserad och använder SCO för att bära ljudet. Profilen ska ge möjlighet till röstsamtal mellan två Bluetoothenheter.
+
+Object Push Profile (OPP)
+
+    En grundläggande profil för att skicka "objekt" som till exempel bilder, vCard och så vidare. Den kallas för "Push" för att överföringen alltid startas av sändaren (klienten), inte av mottagaren (servern), man "pressar" filen till mottagaren.
+
+Phone Book Access Profile (PBAP, PBA)
+
+    Phone Book Access (PBA) eller Phone Book Access Profile (PBAP) är en profil som möjliggör utbyte av telefonbokens kontakter mellan Bluetoothenheter.
+
+Personal Area Networking Profile (PAN)
+
+    Den här profilen är menad att tillåta användandet av Bluetooth Network Encapsulation Protocol som lager 3 för transport över en Bluetoothlänk.
+
+Serial Port Profile (SPP)
+
+    Den här profilen är baserad på ETSI TS07.10-specifikationerna och använder RFCOMM-protokollet. Den emulerar en seriell kabel för att ge en enkel trådlös ersättare för existerande RS232-baserade seriellkommunikationsapplikationer, inkluderat bekanta kontrollsignaler. Den ger grunderna för profilerna DUN, FAX HSP och LAN.
+
+Service Discovery Application Profile (SDAP)
+
+    Obligatorisk profil som används till att identifiera vilka profiler som finns tillgängliga på enheten.
+
+SIM Access Profile (SAP)
+
+    Den här tillåter enheter som till exempel en bils telefon med inbyggd GSM-mottagare att ansluta till ett SIM-kort i en telefon med Bluetooth, så behövs inget separat SIM-kort till bilen.
+
+Synchronisation Profile (SYNCH)
+
+    Profilen används för synkronisering av Personal Information Manager (PIM) objekt, till exempel kalender och adressbok. Den här profilen härstammar från IrDA-specifikationerna, men har konverterats av Bluetooth SIG så att den ska passa Bluetoothstandarden, den är också förknippad med IrMC-synkronisering.
+
+Video Distribution Profile (VDP)
+
+    Denna profil tillåter överföring av en videoström. Den kan användas för strömning av inspelad video från en dator till en portabel spelare, eller från en digital videokamera till en TV. Stöd för 263 horisontella linjer är ett krav. Stöd för MPEG-4 Visual Simple Profile samt H.263 profil 3 och 8 är frivilligt.
+
+Följande profiler är inte klara än,[när?] men tänkta att gå under Bluetooth SIG:
+
+    Handsfree profile 1.5 (HFP 1.5)
+    Unrestricted Digital Information (UDI)
+    Wireless Application Protocoll over Bluetooth (WAP)
+    Extended Service Discovery Profile (ESDP)
+    Local Position Profile (LPP)
+    Video Conferencing Profile (VCP)
+    Device ID (DID) : Tillåter en enhet att bli identifierad utifrån specifikationerna version, tillverkare, produkt, produktversion och så vidare. Den ger liknande möjligheter som Plug and Play ger.
+källa: https://sv.wikipedia.org/wiki/Bluetooth

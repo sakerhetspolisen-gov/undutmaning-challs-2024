@@ -1,0 +1,146 @@
+/* General styles */
+
+.hero {
+  background: #395144; 
+}
+
+
+body {
+  background: #004d00;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+}
+
+a {
+  color: #333;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+ul,
+ol {
+  margin-top: 0;
+  margin-bottom: 15px;
+  padding-left: 0;
+  list-style: none;
+}
+
+button {
+  border: none;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+.navbar-brand img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+  left: 20px;
+  top: 10px;
+}
+.navbar-collapse {
+  justify-content: flex-end;
+}
+
+
+/* Header styles */
+
+.header {
+  background-color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header img {
+  height: 50px;
+  width: auto;
+}
+
+.header nav ul {
+  display: flex;
+}
+
+.header nav ul li {
+  margin-right: 20px;
+}
+
+.header nav ul li:last-child {
+  margin-right: 0;
+}
+
+.header nav ul li a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.2s;
+}
+
+.header nav ul li a:hover {
+  color: #7c553d;
+}
+
+/* Hero section styles */
+
+.hero {
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  text-align: center;
+  padding: 100px 20px;
+  position: relative;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 24px;
+  margin-bottom: 0;
+}
+
+.letter {
+    background-image: url('../images/flask.png');
+    background-size: contain; /* This will make sure the entire image is shown, though it might not cover the entire element */
+    background-repeat: no-repeat;
+    background-position: center bottom; /* Center the image horizontally and align it to the bottom */
+    width: 100%; /* Take the full width of the parent */
+    height: 400px; /* Define a height for the container. Ensure this is enough to show your image */
+    display: flex; /* Use flexbox to center content */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    text-align: center; /* Center text */
+}
+/* If .letter-centered is an inner container, make sure it inherits height */
+.letter-centered {
+    height: 100%; /* Inherit height from .letter */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

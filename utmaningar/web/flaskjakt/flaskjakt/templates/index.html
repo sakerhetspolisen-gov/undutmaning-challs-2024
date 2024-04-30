@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}FLASKPOST{% endblock %}
+
+{% block content %}
+    <div class="hero">
+      <h1><b>Flaskjakt</b></h1>
+      <p><b>Ett brev utöver det vanliga</b></p>
+    </div>
+    <div class="container">
+      <div class="row letter-centered">
+        <div class="col-md-8">
+	  <div class="search-container">
+            <form action="{{ url_for('search') }}" method="GET" class="form-inline my-2 my-lg-0">
+              <input class="form-control w-75 mr-sm-2" type="search" name="q" value="{{ query }}" placeholder="Search..." aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+{% endblock %}

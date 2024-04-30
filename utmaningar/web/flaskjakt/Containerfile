@@ -1,0 +1,44 @@
+# Use the latest Fedora image as base
+FROM fedora:latest
+
+# Install Python and other required packages
+RUN dnf update -y && dnf install -y python3 python3-pip sudo
+
+# Avoid caching Python files on disk (optional)
+ENV PYTHONDONTWRITEBYTECODE 1
+
+# Turn off buffering for easier container logging (optional)
+ENV PYTHONUNBUFFERED 1
+
+RUN useradd -m appuser
+RUN useradd -m harald
+
+WORKDIR /app
+
+# Copy the application files to the container
+COPY ./flaskjakt /app/flaskjakt
+COPY run.py /app
+
+# Copy the requirements 
+COPY ./flaskjakt/requirements.txt /app
+COPY ./flaskjakt/harald_notes.txt /app
+COPY ./flaskjakt/flag.txt /home/harald/flag.txt
+COPY sudoers /etc/
+
+# Install the required Python packages listed in the requirements file
+RUN pip3 install --no-cache-dir -r requirements.txt
+
+# Change the ownership of the /app directory to the appuser
+RUN chown -R appuser:appuser /app
+
+# Switch to the non-root user for running the application
+USER appuser
+
+# Set environment variable to point to the Flask app
+ENV FLASK_APP run.py
+
+# Expose the port the app runs on
+EXPOSE 5000
+
+# Command to run the Flask application
+CMD ["python3", "-m", "flask", "run", "--host=0.0.0.0"]
