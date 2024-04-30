@@ -1,0 +1,50 @@
+## Beskrivning
+Skapa ett lösenord som följer ett antal regler av ökande komplexitet. Tiden man 
+har på sig är begränsad. De första reglerna går bra att lösa för hand men de
+senare kräver att man skriver någon form av program för att hinna lösa.
+
+## Exempel
+
+    ==========================================
+    Welcome, brave traveler #1433078644!
+    ==========================================
+
+    Thou art now able to create a new password that will allow thee access to this realm. May thy password be strong and true, lest thou wish to face the challenges that lie ahead.
+
+    Hear ye, hear ye! Heed these rules and waste not thy time with delay!
+
+    Rule 1: Thy password shall consist of more than eight characters. Let no man sayeth otherwise!
+    Rule 2: Thou shalt not make thy password greater than 64 characters in length, lest ye anger the gods.
+    Rule 3: Let thy password contain both upper and lower case letters.
+
+    Speak thy new password: aaaaAAAA
+
+    Rule 4: Thou shalt not use a common password, such as aaaaa. Be creative, or suffer the consequences!
+
+    Speak thy new password: ...
+
+---
+
+## Alla regler
+
+    > python3 src/create-password.py -l
+
+    Rule 1: Thy password shall consist of more than eight runes. Let no man sayeth otherwise!
+    Rule 2: Thou shalt not make thy password greater than 64 runes in length, lest ye anger the gods.
+    Rule 3: Let thy password contain both upper and lower case letters.
+    Rule 4: Thou shalt not use a common password, such as {seq}. Be creative, or suffer the consequences!
+    Rule 5: Let thy password be made up of more than 10 digits, lest thou wish to be challenged by the guardians of this realm.
+    Rule 6: Thy password shall have at least three lower case letters and five upper case letters, that thy strength may be known to all.
+    Rule 7: Let thy password contain a hexadecimal number (0x..), greater than one, lest ye wish to face the wrath of the vikings.
+    Rule 8: Thy password shall also contain an octal number (0o..), greater than one, that all may know thy worth.
+    Rule 9: Let the sum of all digit runes in thy password be equal to {value}, lest thou wish to face the challenges of the realm.
+    Rule 10: Thy password must have the octal number ({octal:#o}) multiplied with the hexadecimal number ({hex:#x}) equal to thy traveler number, that all may know thee as a true warrior of this land.
+    Rule 11: Verify thy password within three seconds, lest thou wish to be cast out into the wilderness! Haste, my friend, for time is of the essence in this realm.
+
+# För granskare 
+Skriv ett program som följer reglerna tillräckligt snabbt. 
+Förslag på lösning finns i `solution/solve.py`.
+
+## Flaggan
+
+Flaggan finns i filen `src/user_account.py`

@@ -1,0 +1,13 @@
+## Beskrivning
+Utmaningen innebär att ta sig igenom en slupvis genererad labyrint på en begränsad
+tid. Det finns tre olika svårighetsgrader, men bara den högsta (dvs den största 
+labyrinten) ger flaggan som belöning. Labyrinten visas som ASCII-art och 
+begränsningen i tid gör att man behöver automatisera springandet genom labyrinten
+på lämpligt sätt.
+
+Det finns många olika lösningar. Tidsbegränsningen gör att man måste automatisera
+sin rörelse genom labyrinten, tex genom att följa antingen högra eller vänstra väggen 
+(vilket innebär att man kommer besöka varje del av labyrinten, dvs även utgången,
+minst en gång) vilket är ganska långsamt och därför kanske inte hinner i mål i tid, 
+eller bygga upp en karta av labyrinten och söka efter utgången (se till exempel 
+lösningen i `solution/maze_discovery.py`) vilket är mer effektivt.

@@ -1,0 +1,20 @@
+## Beskrivning
+
+OSINT chall, använd bilden och ledtrådarna för att hitta flaggan på nätet.
+
+## Flagga
+
+undut{OM-NOM-NOM-DONUT}
+
+## Ursprunliga beskrivningen från konstruktör
+Utforskaren
+kategori: OSINT
+svårighetsgrad: lätt / medium
+desc: man får en bild på ett höghus med en text som talar om att ca 425 meter från platsen där bilden togs så åt Harriet något utomjordiskt gott här tillsammans med sin reserådgivare mr.Wongnai och lämnade en ressension med bild. 
+lösning: 
+1) identifiera huset, 3 sec i google images
+2) hitta var bilden togs ifrån. det finns ett till hus i bilden som går att hitta i google maps samt en skylt. dessa tre saker raddar upp på ett enda ställe i google maps street view. 
+3) rita en cirkel med radie 425 meter i google maps och kolla vad som finns längs diametern. 
+4) hitta donut stället "UFO Doughnuts" i google maps som ligger 425 meter ifrån platsen bilden togs. 
+5) inse att chall texten innehåller "reserådgivare" mr.wongnai = wongnai(.)com. 
+6) öppna ställets wongnai sida och gå till en av resenssionerna. Harriet von Hopp har lämnat en ressionen här med 3 munkar. chall flaggan är skriven på en servet bredvid munkarna på bilden
