@@ -1,0 +1,10 @@
+Avkodning görs lättast visuellt genom inspektion av Fouriertransform.
+Den medföljande solve.py kan användas för att generera en sådan
+med hjälp av pyplot och numpy.
+
+e.g.,
+
+./solve.py ../download/chall_4000hz.complex64 lala.png
+
+Signalen är FSK-CW modulerad, så en jämförelse mot Morsealfabetet
+ger svaret. Se solve.png.

@@ -1,0 +1,13 @@
+Utmaningen består av att avkoda digitaliserade/samplade radiovågor som I/Q-data.
+
+Det är viktigt att detta på något sätt framgår av beskrivningen för annars
+finns risken att man bara tittar på rådata som kan avkodas på rätt många olika
+sätt.
+
+Att det är just I/Q-data framgårav filnamnet (c64/complex64) och
+samplingsfrekvensen också (4000 hz) men detta bör sättas in i någon form av
+radio-kontext i storyn.
+
+# Flagga
+
+undut?varkanjaghittadig?

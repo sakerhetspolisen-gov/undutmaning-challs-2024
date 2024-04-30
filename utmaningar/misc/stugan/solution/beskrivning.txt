@@ -1,0 +1,7 @@
+Stugan revisited är ett klassiskt text-äventyr/MUD upplevelse. Man anger
+textkommandon för att interagera med de olika miljöerna för att hitta olika
+ledtrådar och ta sig fram till flaggan. Det sträcker sig från att hitta nycklar
+till att lista ut koder och lösenord.
+
+Alla kommandon måste vara språkligt korrekta, med verb på infinitiv form och
+stubstantiv i bestämd form.
