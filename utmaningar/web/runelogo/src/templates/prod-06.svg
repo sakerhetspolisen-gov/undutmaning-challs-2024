@@ -1,0 +1,32 @@
+<svg width="75%" viewbox="0 0 200 100">
+  <defs>
+<filter id="heavycloud" color-interpolation-filters="sRGB" x="0%" y="0%" height="100%" width="100%">
+  <feTurbulence type="fractalNoise" result="cloudbase" baseFrequency=".25" numOctaves="1" seed="24"/>
+
+    <feColorMatrix in="cloudbase" type="hueRotate" values="0" result="cloud">
+    <animate attributeName="values" from="0" to="360" dur="5s" repeatCount="indefinite"/>
+  </feColorMatrix>
+
+  <feColorMatrix in="cloud" result="wispy" type="matrix" 
+                               values="4 0 0 0 -1
+                                       4 0 0 0 -1
+                                       4 0 0 0 -1
+                                       1 0 0 0 0   
+                                       "/>
+
+  <feFlood flood-color="#113388" result="blue"/>
+
+  <feBlend mode="screen" in2="blue" in="wispy"/>
+
+  <feGaussianBlur stdDeviation="1"/>
+
+  <feComposite operator="in" in2="SourceGraphic"/>
+
+</filter>
+  </defs>
+<style>
+</style>
+  <text id="content" x="10" y="50" width="200" fill="blue" filter="url(#heavycloud)" stroke-color="blue" font-weight="bold" kerning="-75" font-stretch="condensed"></text>
+
+
+</svg>

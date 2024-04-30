@@ -1,0 +1,31 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  viewBox="0 0 200 100"
+>
+  <defs>
+    <filter id="my-filter">
+      <feTurbulence baseFrequency="0.1" seed="0" numOctaves="1" result="turbubase"/>
+          <feColorMatrix in="turbubase" type="hueRotate" values="0" result="turbu2">
+    <animate attributeName="values" from="0" to="360" dur="2s" repeatCount="indefinite"/>
+  </feColorMatrix>
+
+      <feFlood flood-color="black" result="blue"/>
+      <feBlend mode="exclusion" in2="blue" in="turbu2" result="turbu3"/>
+      <feComposite operator="in" in2="SourceGraphic"></feComposite>
+    </filter>
+  </defs>
+  <style>
+  </style>
+<g>
+  <circle cx="50" cy="50" r="50" filter="url('#my-filter')" />
+        <animateTransform
+    attributeName="transform"
+    type="rotate"
+    from="0 50 50"
+    to="360 50 50"
+    dur="20s"
+    repeatCount="indefinite" />
+</g>
+  <text x="25" y="55" id="content" style="stroke:orange;fill:orange;"></text>
+</svg>

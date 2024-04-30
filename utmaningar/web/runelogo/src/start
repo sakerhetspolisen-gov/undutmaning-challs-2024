@@ -1,0 +1,5 @@
+#!/bin/sh
+export LOGOIV=$(openssl rand -hex 16)
+export LOGOKEY=$(openssl rand -hex 32)
+bundle exec puma -e production -p 4567
+

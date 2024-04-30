@@ -1,0 +1,20 @@
+<svg width="75%" viewBox="0 0 127 75" style="background:black">
+	<defs>
+		<filter id="imagenconturbulencias" x="0" y="0" width="100%" height="100%">
+			<feTurbulence result="cloud" baseFrequency=".2" seed="22" stitchTiles="nostitch" type="fractalNoise" numOctaves="3">
+			<animate
+				attributeName="baseFrequency"
+				calcMode="spline"
+				dur="20s"
+				values=".2;.1;.2"
+				repeatCount="indefinite"
+			/>
+			</feTurbulence>
+			<feComposite operator="in" in="cloud" in2="SourceGraphic"/>
+		</filter>
+	</defs>
+<style>
+</style>
+<text x="50" y="20" id="content" dominant-baseline="middle" text-anchor="middle" filter="url(#imagenconturbulencias)"></text>
+</svg>
+
