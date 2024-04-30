@@ -1,0 +1,33 @@
+en väldigt enkel hemsida / blog som är såbar för en 2nd order SQL injektion.
+
+sidans funktionalitet:
+- logga in
+- registrera användare (preppar injektionen här i username fältet)
+- posta inlägg
+- lista alla inlägg
+- lista alla inlägg som nuvarande inloggad användare skrivit 
+  (triggar injektionen om användarens namn innehåller SQL  syntax för injektion)
+
+## steg för att lösa
+man måste först inse att det är en 2nd order SQLi. 
+om man registrerar användaren test eller liknande så kommer man inte kunna trigga någon injektion. 
+
+1. registrera user med username '
+2. logga in som usern
+3. tryck på Fetch All Posts (få ett humm om att det är 2 output kolumner, username + content)
+4. tryck på Fetch My Posts (felmeddelande printas, yäy vi har nått injecerbart) 
+5. hitta db motorn genom att registrera användare med injektion syntax och trigga. 
+ex: hej' union all select 1, tbl_name from sqlite_schema; --
+ovan ger dig också tabellerna...
+6. FLAGS låter intressant. skapa ny anv
+ex: hej' union all select 1, name from PRAGMA_TABLE_INFO('FLAGS'); -- 
+7. FLAGS.flag är målet! 
+ex: hej' union all select 1,flag from flags; --
+8. fira att du nu har flaggan!
+
+999. run solver.py...
+
+## Flagga
+
+undut{grattis-till-flaggan}
+   

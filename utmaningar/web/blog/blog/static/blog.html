@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blogg</title>
+  <link rel="stylesheet" type="text/css" href="static/css/style.css">
+  <link rel="stylesheet" type="text/css" href="static/css/sakura-dark-solarized.css">
+  <script src="static/js/fetchPosts.js"></script>
+</head>
+
+<body>
+<h1>bloggen</h1>
+<section class="links">
+  <a href="/logout">Logout</a>
+  <a href="/fetch_posts">Fetch All Posts</a>
+  <a href="/fetch_my_posts">Fetch My Posts</a>
+</section>
+<section id="posts" class="center"></section><br>
+<textarea name="post" form="post" rows="10" cols="50" placeholder="Skriv in ditt inlägg här..."></textarea><br>
+<form method="POST" action="/post" id="post" class="center">
+  <input type="submit" value="Lägg upp inlägg">
+</form>
+</body>
+
+</html>
